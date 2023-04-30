@@ -36,7 +36,7 @@ class Http {
     Map<String, String> headers = const {},
     Map<String, String> queryParameters = const {},
     bool useApiKey = false,
-    String titleUseApiKey = 'api_key',
+    String titleUseApiKey = 'x-api-key',
     Map<String, dynamic> body = const {},
     Duration timeout = const Duration(seconds: 35),
   }) async {

@@ -12,9 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Cat Breeds',
       routes: appRoutes,
-      initialRoute: Routes.HOME,
+      initialRoute: Routes.SPLASH,
       debugShowCheckedModeBanner: false,
-      theme: getTheme(true),
+      theme: getTheme(false),
     );
   }
 }

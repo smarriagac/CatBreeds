@@ -11,12 +11,7 @@ Either<ResponseFailure, T> handleFailure<T>(HttpFailure httpfailure) {
         return ResponseFailure.notFound();
       case 401:
       case 400:
-        if ((httpfailure.data as Map<String, dynamic>)['http_code'] == 110010) {
-          return ResponseFailure.linkDevice();
-        }
         return ResponseFailure.unauthorized();
-
-      default:
     }
     if (httpfailure.exception is NetworkException) {
       return ResponseFailure.network();
