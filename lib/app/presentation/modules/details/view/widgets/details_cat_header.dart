@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../domain/models/breeds/breeds.dart';
 import '../../../../global/extensions/build_context_ext.dart';
+import '../../../../global/widgets/error_image_card.dart';
 import '../../../home/utils/get_image_url.dart';
 
 class DetailsCatHeader extends StatelessWidget {
@@ -26,6 +27,12 @@ class DetailsCatHeader extends StatelessWidget {
               width: double.infinity,
               height: double.infinity,
               fit: BoxFit.cover,
+              loadStateChanged: (state) {
+                final status = state.extendedImageLoadState;
+                return {
+                  LoadState.failed: const ErrorCatImage(),
+                }[status];
+              },
             ),
           ),
           Positioned(

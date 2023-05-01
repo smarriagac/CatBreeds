@@ -12,6 +12,7 @@ class HomeView extends ConsumerWidget {
     final beers = ref.watch(homeController);
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,
         title: const Text('Cat Breeds'),

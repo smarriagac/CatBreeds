@@ -13,7 +13,6 @@ class InternetChecker {
       final response = await get(Uri.parse('8.8.8.8'));
       return response.statusCode == 200;
     } catch (e) {
-      print(e);
       return false;
     }
   }

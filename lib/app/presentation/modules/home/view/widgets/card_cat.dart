@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../domain/models/breeds/breeds.dart';
 import '../../../../global/extensions/build_context_ext.dart';
+import '../../../../global/widgets/error_image_card.dart';
 import '../../utils/get_image_url.dart';
 
 class CardCat extends StatelessWidget {
@@ -27,6 +28,13 @@ class CardCat extends StatelessWidget {
                 child: ExtendedImage.network(
                   getImageUrl(cats.referenceImageId?.trim() ?? ''),
                   fit: BoxFit.cover,
+                  handleLoadingProgress: true,
+                  loadStateChanged: (state) {
+                    final status = state.extendedImageLoadState;
+                    return {
+                      LoadState.failed: const ErrorCatImage(),
+                    }[status];
+                  },
                 ),
               ),
             ),

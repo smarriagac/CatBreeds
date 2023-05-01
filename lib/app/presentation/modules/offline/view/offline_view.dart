@@ -5,9 +5,9 @@ class OfflineView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('Hola offline'),
+        child: Image.asset('assets/error_conection.png'),
       ),
     );
   }
