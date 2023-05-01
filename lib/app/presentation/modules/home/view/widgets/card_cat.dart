@@ -28,6 +28,7 @@ class CardCat extends StatelessWidget {
                 child: ExtendedImage.network(
                   getImageUrl(cats.referenceImageId?.trim() ?? ''),
                   fit: BoxFit.cover,
+                  headers: const {'Access-Control-Allow-Origin': '*'},
                   handleLoadingProgress: true,
                   loadStateChanged: (state) {
                     final status = state.extendedImageLoadState;

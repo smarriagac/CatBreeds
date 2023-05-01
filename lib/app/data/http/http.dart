@@ -61,6 +61,7 @@ class Http {
 
       headers = {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
         ...headers,
         ..._headersGeneral,
       };
