@@ -56,8 +56,7 @@ class DetailsCatHeader extends StatelessWidget {
               ),
               child: Text(
                 cat.name,
-                style:
-                    context.textTheme.titleLarge!.copyWith(color: Colors.white),
+                style: context.textTheme.titleLarge,
               ),
             ),
           )

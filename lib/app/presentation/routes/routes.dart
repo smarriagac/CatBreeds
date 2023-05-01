@@ -5,4 +5,5 @@ abstract class Routes {
   static const OFFLINE = '/offline';
   static const SPLASH = '/splash';
   static const DETAILS = '/details';
+  static const PROFILE = '/profile';
 }

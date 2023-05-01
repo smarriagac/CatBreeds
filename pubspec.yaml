@@ -36,6 +36,7 @@ dependencies:
   json_annotation: ^4.8.0
   connectivity_plus: ^3.0.4
   extended_image: ^7.0.2
+  shared_preferences: ^2.0.17
   flutter:
     sdk: flutter
 

@@ -1,16 +1,18 @@
-# catbreeds
+[![Flutter version](https://img.shields.io/badge/Flutter-3.7.11-informational.svg)](https://esflutter.dev/docs/development/tools/sdk/releases?tab=macos)
 
-A new Flutter project.
+# Cat Breeds
+
+App list from cats.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. running 
+``` dart
+flutter clean
+flutter pub get
+```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. generate models freezed 
+``` dart
+flutter pub run build_runner build --delete-conflicting-outputs
+```

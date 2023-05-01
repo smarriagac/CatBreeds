@@ -1,3 +1,4 @@
+import '../modules/profile/view/profile_view.dart';
 import '../modules/details/view/details_view.dart';
 import '../modules/splash/view/splash_view.dart';
 import 'package:flutter/widgets.dart' show BuildContext, Widget;
@@ -12,5 +13,6 @@ Map<String, Widget Function(BuildContext)> get appRoutes {
     Routes.OFFLINE: (_) => const OfflineView(),
     Routes.SPLASH: (_) => const SplashView(),
     Routes.DETAILS: (_) => const DetailsView(),
+    Routes.PROFILE: (_) => const ProfileView(),
   };
 }

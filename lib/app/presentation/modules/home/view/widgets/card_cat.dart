@@ -60,17 +60,11 @@ class CardCat extends StatelessWidget {
                   children: [
                     Text(
                       cats.name,
-                      style: context.textTheme.titleLarge!
-                          .copyWith(color: Colors.white),
+                      style: context.textTheme.titleLarge,
                     ),
                     Row(
                       children: [
-                        Text(
-                          'Mas',
-                          style: context.textTheme.labelMedium!.copyWith(
-                            color: Colors.white,
-                          ),
-                        ),
+                        Text('Mas', style: context.textTheme.labelMedium),
                         const Icon(
                           Icons.arrow_right_rounded,
                           size: 45,
@@ -112,8 +106,7 @@ class CardCat extends StatelessWidget {
                   children: [
                     Text(
                       cats.origin,
-                      style: context.textTheme.labelLarge!
-                          .copyWith(color: Colors.white),
+                      style: context.textTheme.labelLarge,
                     ),
                     Column(
                       // crossAxisAlignment: CrossAxisAlignment.end,
@@ -121,8 +114,7 @@ class CardCat extends StatelessWidget {
                       children: [
                         Text(
                           'intelligence',
-                          style: context.textTheme.labelSmall!
-                              .copyWith(color: Colors.white),
+                          style: context.textTheme.labelSmall,
                         ),
                         const SizedBox(height: 10),
                         Stack(
@@ -138,8 +130,7 @@ class CardCat extends StatelessWidget {
                             ),
                             Text(
                               cats.intelligence.toStringAsFixed(1),
-                              style: context.textTheme.titleSmall!
-                                  .copyWith(color: Colors.white),
+                              style: context.textTheme.titleSmall,
                             )
                           ],
                         ),
