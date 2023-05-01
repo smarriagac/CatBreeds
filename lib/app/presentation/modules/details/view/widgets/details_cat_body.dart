@@ -26,10 +26,6 @@ class DetailCatBody extends StatelessWidget {
             Text(
               cat.description,
               textAlign: TextAlign.justify,
-              style: context.textTheme.bodySmall!.copyWith(
-                fontSize: 20,
-                fontWeight: FontWeight.w200,
-              ),
             ),
             const SizedBox(height: 10),
             ItemsDescription(

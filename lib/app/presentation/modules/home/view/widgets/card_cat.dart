@@ -40,11 +40,6 @@ class CardCat extends StatelessWidget {
                   gradient: LinearGradient(
                     end: Alignment.topCenter,
                     begin: Alignment.bottomCenter,
-                    // stops: [
-                    //   0.2,
-                    //   0.8,
-                    //   1,
-                    // ],
                     colors: [
                       Colors.transparent,
                       Colors.black45,

@@ -13,25 +13,15 @@ class HomeView extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: const Text('Cat Breeds'),
       ),
-      body: Column(
-        children: [
-          Container(
-            height: 50,
-            width: double.maxFinite,
-            color: Colors.red,
-          ),
-          Expanded(
-            child: beers.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              failed: () => const Center(child: Icon(Icons.close)),
-              loaded: (homepageState) => ListCardCats(
-                homeState: homepageState,
-              ),
-            ),
-          ),
-        ],
+      body: beers.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        failed: () => const Center(child: Icon(Icons.close)),
+        loaded: (homepageState) => ListCardCats(
+          homeState: homepageState,
+        ),
       ),
     );
   }
