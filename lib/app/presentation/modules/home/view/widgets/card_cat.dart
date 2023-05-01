@@ -60,11 +60,18 @@ class CardCat extends StatelessWidget {
                   children: [
                     Text(
                       cats.name,
-                      style: context.textTheme.titleLarge,
+                      style: context.textTheme.titleLarge!.copyWith(
+                        color: const Color(0xffcde5ff),
+                      ),
                     ),
                     Row(
                       children: [
-                        Text('Mas', style: context.textTheme.labelMedium),
+                        Text(
+                          'Mas',
+                          style: context.textTheme.labelMedium!.copyWith(
+                            color: const Color(0xffcde5ff),
+                          ),
+                        ),
                         const Icon(
                           Icons.arrow_right_rounded,
                           size: 45,
@@ -106,7 +113,9 @@ class CardCat extends StatelessWidget {
                   children: [
                     Text(
                       cats.origin,
-                      style: context.textTheme.labelLarge,
+                      style: context.textTheme.labelLarge!.copyWith(
+                        color: const Color(0xffcde5ff),
+                      ),
                     ),
                     Column(
                       // crossAxisAlignment: CrossAxisAlignment.end,
@@ -114,7 +123,9 @@ class CardCat extends StatelessWidget {
                       children: [
                         Text(
                           'intelligence',
-                          style: context.textTheme.labelSmall,
+                          style: context.textTheme.labelSmall!.copyWith(
+                            color: const Color(0xffcde5ff),
+                          ),
                         ),
                         const SizedBox(height: 10),
                         Stack(
@@ -125,12 +136,14 @@ class CardCat extends StatelessWidget {
                               height: 40,
                               child: CircularProgressIndicator(
                                 value: (cats.intelligence / 5).clamp(0.0, 1.0),
-                                color: context.color.secondaryContainer,
+                                // color: context.color.secondaryContainer,
                               ),
                             ),
                             Text(
                               cats.intelligence.toStringAsFixed(1),
-                              style: context.textTheme.titleSmall,
+                              style: context.textTheme.titleSmall!.copyWith(
+                                color: const Color(0xffcde5ff),
+                              ),
                             )
                           ],
                         ),

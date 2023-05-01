@@ -45,7 +45,7 @@ class DetailCatBody extends StatelessWidget {
             const SizedBox(height: 10),
             ItemsDescription(
               title: 'Alt. Names',
-              description: cat.altNames ?? 'N/A',
+              description: cat.altNames!.isEmpty ? 'N/A' : cat.altNames!,
             ),
             const SizedBox(height: 10),
             ItemsDescription(
@@ -61,6 +61,36 @@ class DetailCatBody extends StatelessWidget {
             ItemsDescription(
               title: 'More datas',
               description: cat.wikipediaUrl.toString(),
+            ),
+            const SizedBox(height: 10),
+            ItemsDescription(
+              title: 'Grooming',
+              description: cat.grooming.toString(),
+            ),
+            const SizedBox(height: 10),
+            ItemsDescription(
+              title: 'Hypoallergenic',
+              description: cat.hypoallergenic.toString(),
+            ),
+            const SizedBox(height: 10),
+            ItemsDescription(
+              title: 'Natural',
+              description: cat.natural.toString(),
+            ),
+            const SizedBox(height: 10),
+            ItemsDescription(
+              title: 'Suppressed Tail',
+              description: cat.suppressedTail.toString(),
+            ),
+            const SizedBox(height: 10),
+            ItemsDescription(
+              title: 'Energy Level',
+              description: cat.energyLevel.toString(),
+            ),
+            const SizedBox(height: 10),
+            ItemsDescription(
+              title: 'Adaptability',
+              description: cat.adaptability.toString(),
             ),
           ],
         ),
@@ -91,7 +121,7 @@ class ItemsDescription extends StatelessWidget {
           ),
         ],
       ),
-      style: context.textTheme.bodyLarge!.copyWith(fontSize: 18),
+      style: context.textTheme.titleMedium!.copyWith(fontSize: 18),
     );
   }
 }

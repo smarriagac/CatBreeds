@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../color_schemes.g.dart';
-import 'app_textsyle.dart';
+import '../app_color.dart';
 
 ThemeData getTheme(bool darkMode) {
-  final AppTextStyle textStyle = AppTextStyle.instance;
-
   if (darkMode) {
-    final darkTheme = ThemeData(useMaterial3: true);
+    final darkTheme = ThemeData.dark(useMaterial3: true);
     final textTheme = darkTheme.textTheme;
     // const textStyleColor = TextStyle(color: Colors.white);
+    const whiteStyle = TextStyle(color: Colors.white);
+    const boldStyle = TextStyle(
+      fontWeight: FontWeight.bold,
+    );
     return darkTheme.copyWith(
       appBarTheme: const AppBarTheme(
         elevation: 0,
@@ -19,21 +20,10 @@ ThemeData getTheme(bool darkMode) {
       colorScheme: darkColorScheme,
       textTheme: GoogleFonts.nunitoSansTextTheme(
         textTheme.copyWith(
-          displayLarge: textStyle.displayLarge,
-          displayMedium: textStyle.displayMedium,
-          displaySmall: textStyle.displaySmall,
-          headlineLarge: textStyle.headlineLarge,
-          headlineMedium: textStyle.headlineMedium,
-          headlineSmall: textStyle.headlineSmall,
-          titleLarge: textStyle.titleLarge,
-          titleSmall: textStyle.titleSmall,
-          titleMedium: textStyle.titleMedium,
-          labelLarge: textStyle.labelLarge,
-          labelMedium: textStyle.labelMedium,
-          labelSmall: textStyle.labelSmall,
-          bodyLarge: textStyle.bodyLarge,
-          bodyMedium: textStyle.bodyMedium,
-          bodySmall: textStyle.bodySmall,
+          titleSmall: textTheme.titleSmall?.merge(boldStyle),
+          titleMedium: textTheme.titleMedium?.merge(boldStyle),
+          titleLarge: textTheme.titleLarge?.merge(boldStyle),
+          bodySmall: textTheme.bodySmall?.merge(whiteStyle),
         ),
       ),
     );
@@ -41,7 +31,8 @@ ThemeData getTheme(bool darkMode) {
 
   final ligthTheme = ThemeData(useMaterial3: true);
   final textTheme = ligthTheme.textTheme;
-  // const textStyleColor = TextStyle(color: Colors.black);
+  const boldStyle = TextStyle(fontWeight: FontWeight.bold, color: Colors.black);
+  const darkStyle = TextStyle(color: Colors.black);
 
   return ligthTheme.copyWith(
     useMaterial3: true,
@@ -52,21 +43,10 @@ ThemeData getTheme(bool darkMode) {
     colorScheme: lightColorScheme,
     textTheme: GoogleFonts.nunitoSansTextTheme(
       textTheme.copyWith(
-        displayLarge: textStyle.displayLarge,
-        displayMedium: textStyle.displayMedium,
-        displaySmall: textStyle.displaySmall,
-        headlineLarge: textStyle.headlineLarge,
-        headlineMedium: textStyle.headlineMedium,
-        headlineSmall: textStyle.headlineSmall,
-        titleLarge: textStyle.titleLarge,
-        titleSmall: textStyle.titleSmall,
-        titleMedium: textStyle.titleMedium,
-        labelLarge: textStyle.labelLarge,
-        labelMedium: textStyle.labelMedium,
-        labelSmall: textStyle.labelSmall,
-        bodyLarge: textStyle.bodyLarge,
-        bodyMedium: textStyle.bodyMedium,
-        bodySmall: textStyle.bodySmall,
+        titleSmall: textTheme.titleSmall?..merge(boldStyle),
+        titleMedium: textTheme.titleMedium?.merge(boldStyle),
+        titleLarge: textTheme.titleLarge?.merge(boldStyle),
+        bodySmall: textTheme.bodyMedium?.merge(darkStyle),
       ),
     ),
   );

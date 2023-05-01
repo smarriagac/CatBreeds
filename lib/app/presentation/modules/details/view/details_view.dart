@@ -17,7 +17,7 @@ class DetailsView extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        iconTheme: const IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Color(0xffcde5ff)),
       ),
       body: Column(
         children: [
