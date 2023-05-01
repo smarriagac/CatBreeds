@@ -10,21 +10,23 @@ Overall, this app provides an enjoyable and user-friendly experience for cat lov
 
 ## Getting Started
 
-1. running 
+1. Running 
 ``` dart
 flutter clean
 flutter pub get
 ```
 
-2. generate models freezed 
+2. Generate models freezed 
 ``` dart
 flutter pub run build_runner build --delete-conflicting-outputs
 ```
 
-### Themes 
+## Themes 
 
 - Dark 
+
 ![dark](https://user-images.githubusercontent.com/80381423/235535338-1dcdda85-1b38-4eb5-9454-7bc47ba4e4a8.jpg)
 
 - Light
+
 ![ligth](https://user-images.githubusercontent.com/80381423/235535140-cd777a8d-464b-4807-ae95-bd84c30eb8df.jpg)
