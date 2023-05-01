@@ -8,5 +8,13 @@ part 'home_state.freezed.dart';
 class HomeState with _$HomeState {
   const factory HomeState.loading() = _HomeStateLoading;
   const factory HomeState.failed() = _HomeStateFailed;
-  const factory HomeState.loaded(List<Breeds> state) = _HomeStateLoaded;
+  const factory HomeState.loaded(HomePageState state) = _HomeStateLoaded;
+}
+
+@freezed
+class HomePageState with _$HomePageState {
+  factory HomePageState({
+    @Default(0) int page,
+    required List<Breeds> listBreeds,
+  }) = _HomePageState;
 }

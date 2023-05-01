@@ -20,21 +20,21 @@ mixin _$HomeState {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() failed,
-    required TResult Function(List<Breeds> state) loaded,
+    required TResult Function(HomePageState state) loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? failed,
-    TResult? Function(List<Breeds> state)? loaded,
+    TResult? Function(HomePageState state)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? failed,
-    TResult Function(List<Breeds> state)? loaded,
+    TResult Function(HomePageState state)? loaded,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,7 +119,7 @@ class _$_HomeStateLoading implements _HomeStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() failed,
-    required TResult Function(List<Breeds> state) loaded,
+    required TResult Function(HomePageState state) loaded,
   }) {
     return loading();
   }
@@ -129,7 +129,7 @@ class _$_HomeStateLoading implements _HomeStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? failed,
-    TResult? Function(List<Breeds> state)? loaded,
+    TResult? Function(HomePageState state)? loaded,
   }) {
     return loading?.call();
   }
@@ -139,7 +139,7 @@ class _$_HomeStateLoading implements _HomeStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? failed,
-    TResult Function(List<Breeds> state)? loaded,
+    TResult Function(HomePageState state)? loaded,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -227,7 +227,7 @@ class _$_HomeStateFailed implements _HomeStateFailed {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() failed,
-    required TResult Function(List<Breeds> state) loaded,
+    required TResult Function(HomePageState state) loaded,
   }) {
     return failed();
   }
@@ -237,7 +237,7 @@ class _$_HomeStateFailed implements _HomeStateFailed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? failed,
-    TResult? Function(List<Breeds> state)? loaded,
+    TResult? Function(HomePageState state)? loaded,
   }) {
     return failed?.call();
   }
@@ -247,7 +247,7 @@ class _$_HomeStateFailed implements _HomeStateFailed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? failed,
-    TResult Function(List<Breeds> state)? loaded,
+    TResult Function(HomePageState state)? loaded,
     required TResult orElse(),
   }) {
     if (failed != null) {
@@ -301,7 +301,9 @@ abstract class _$$_HomeStateLoadedCopyWith<$Res> {
           _$_HomeStateLoaded value, $Res Function(_$_HomeStateLoaded) then) =
       __$$_HomeStateLoadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Breeds> state});
+  $Res call({HomePageState state});
+
+  $HomePageStateCopyWith<$Res> get state;
 }
 
 /// @nodoc
@@ -319,25 +321,28 @@ class __$$_HomeStateLoadedCopyWithImpl<$Res>
   }) {
     return _then(_$_HomeStateLoaded(
       null == state
-          ? _value._state
+          ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
-              as List<Breeds>,
+              as HomePageState,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $HomePageStateCopyWith<$Res> get state {
+    return $HomePageStateCopyWith<$Res>(_value.state, (value) {
+      return _then(_value.copyWith(state: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_HomeStateLoaded implements _HomeStateLoaded {
-  const _$_HomeStateLoaded(final List<Breeds> state) : _state = state;
+  const _$_HomeStateLoaded(this.state);
 
-  final List<Breeds> _state;
   @override
-  List<Breeds> get state {
-    if (_state is EqualUnmodifiableListView) return _state;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_state);
-  }
+  final HomePageState state;
 
   @override
   String toString() {
@@ -349,12 +354,11 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HomeStateLoaded &&
-            const DeepCollectionEquality().equals(other._state, _state));
+            (identical(other.state, state) || other.state == state));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_state));
+  int get hashCode => Object.hash(runtimeType, state);
 
   @JsonKey(ignore: true)
   @override
@@ -367,7 +371,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function() failed,
-    required TResult Function(List<Breeds> state) loaded,
+    required TResult Function(HomePageState state) loaded,
   }) {
     return loaded(state);
   }
@@ -377,7 +381,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
     TResult? Function()? failed,
-    TResult? Function(List<Breeds> state)? loaded,
+    TResult? Function(HomePageState state)? loaded,
   }) {
     return loaded?.call(state);
   }
@@ -387,7 +391,7 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function()? failed,
-    TResult Function(List<Breeds> state)? loaded,
+    TResult Function(HomePageState state)? loaded,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -432,10 +436,155 @@ class _$_HomeStateLoaded implements _HomeStateLoaded {
 }
 
 abstract class _HomeStateLoaded implements HomeState {
-  const factory _HomeStateLoaded(final List<Breeds> state) = _$_HomeStateLoaded;
+  const factory _HomeStateLoaded(final HomePageState state) =
+      _$_HomeStateLoaded;
 
-  List<Breeds> get state;
+  HomePageState get state;
   @JsonKey(ignore: true)
   _$$_HomeStateLoadedCopyWith<_$_HomeStateLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$HomePageState {
+  int get page => throw _privateConstructorUsedError;
+  List<Breeds> get listBreeds => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $HomePageStateCopyWith<HomePageState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $HomePageStateCopyWith<$Res> {
+  factory $HomePageStateCopyWith(
+          HomePageState value, $Res Function(HomePageState) then) =
+      _$HomePageStateCopyWithImpl<$Res, HomePageState>;
+  @useResult
+  $Res call({int page, List<Breeds> listBreeds});
+}
+
+/// @nodoc
+class _$HomePageStateCopyWithImpl<$Res, $Val extends HomePageState>
+    implements $HomePageStateCopyWith<$Res> {
+  _$HomePageStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? page = null,
+    Object? listBreeds = null,
+  }) {
+    return _then(_value.copyWith(
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+      listBreeds: null == listBreeds
+          ? _value.listBreeds
+          : listBreeds // ignore: cast_nullable_to_non_nullable
+              as List<Breeds>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_HomePageStateCopyWith<$Res>
+    implements $HomePageStateCopyWith<$Res> {
+  factory _$$_HomePageStateCopyWith(
+          _$_HomePageState value, $Res Function(_$_HomePageState) then) =
+      __$$_HomePageStateCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int page, List<Breeds> listBreeds});
+}
+
+/// @nodoc
+class __$$_HomePageStateCopyWithImpl<$Res>
+    extends _$HomePageStateCopyWithImpl<$Res, _$_HomePageState>
+    implements _$$_HomePageStateCopyWith<$Res> {
+  __$$_HomePageStateCopyWithImpl(
+      _$_HomePageState _value, $Res Function(_$_HomePageState) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? page = null,
+    Object? listBreeds = null,
+  }) {
+    return _then(_$_HomePageState(
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
+      listBreeds: null == listBreeds
+          ? _value._listBreeds
+          : listBreeds // ignore: cast_nullable_to_non_nullable
+              as List<Breeds>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_HomePageState implements _HomePageState {
+  _$_HomePageState({this.page = 0, required final List<Breeds> listBreeds})
+      : _listBreeds = listBreeds;
+
+  @override
+  @JsonKey()
+  final int page;
+  final List<Breeds> _listBreeds;
+  @override
+  List<Breeds> get listBreeds {
+    if (_listBreeds is EqualUnmodifiableListView) return _listBreeds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_listBreeds);
+  }
+
+  @override
+  String toString() {
+    return 'HomePageState(page: $page, listBreeds: $listBreeds)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_HomePageState &&
+            (identical(other.page, page) || other.page == page) &&
+            const DeepCollectionEquality()
+                .equals(other._listBreeds, _listBreeds));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, page, const DeepCollectionEquality().hash(_listBreeds));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_HomePageStateCopyWith<_$_HomePageState> get copyWith =>
+      __$$_HomePageStateCopyWithImpl<_$_HomePageState>(this, _$identity);
+}
+
+abstract class _HomePageState implements HomePageState {
+  factory _HomePageState(
+      {final int page,
+      required final List<Breeds> listBreeds}) = _$_HomePageState;
+
+  @override
+  int get page;
+  @override
+  List<Breeds> get listBreeds;
+  @override
+  @JsonKey(ignore: true)
+  _$$_HomePageStateCopyWith<_$_HomePageState> get copyWith =>
       throw _privateConstructorUsedError;
 }

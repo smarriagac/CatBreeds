@@ -9,12 +9,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Cat Breeds',
-      routes: appRoutes,
-      initialRoute: Routes.SPLASH,
-      debugShowCheckedModeBanner: false,
-      theme: getTheme(false),
+    return GestureDetector(
+      onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+      child: MaterialApp(
+        title: 'Cat Breeds',
+        routes: appRoutes,
+        initialRoute: Routes.SPLASH,
+        debugShowCheckedModeBanner: false,
+        theme: getTheme(false),
+      ),
     );
   }
 }

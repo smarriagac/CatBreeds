@@ -22,18 +22,34 @@ class HomeController extends StateNotifier<HomeState> {
   final BreedsRepository _breedsRepository;
 
   Future init({
-    int page = 1,
-    int limit = 20,
+    int page = 0,
+    int limit = 15,
   }) async {
     // log(status);
-    state = const HomeState.loading();
+    // state = const HomeState.loading();
     final resultApi = await _breedsRepository.getBreeds(
       page: page,
-      limit: 20,
+      limit: limit,
     );
     state = resultApi.when(
-      left: (failure) => const HomeState.failed(),
-      right: (value) => HomeState.loaded(value),
+      left: (_) => const HomeState.failed(),
+      right: (list) {
+        final listState = state.mapOrNull(
+          loaded: (dataList) => dataList.state.listBreeds,
+        );
+        if (list.isEmpty) {
+          return const HomeState.loading();
+        }
+
+        final result = HomePageState(
+          listBreeds: [
+            ...listState ?? [],
+            ...list,
+          ],
+          page: page,
+        );
+        return HomeState.loaded(result);
+      },
     );
     // log('$resultApi');
   }
