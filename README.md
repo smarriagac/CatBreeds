@@ -30,3 +30,12 @@ flutter pub run build_runner build --delete-conflicting-outputs
 - Light
 
 ![ligth](https://user-images.githubusercontent.com/80381423/235535140-cd777a8d-464b-4807-ae95-bd84c30eb8df.jpg)
+
+## Deployment to firebase
+
+The web page is hosted at the following address:
+[Pagina web firebase](catbreeds-eec09.web.app/).
+ 
+
+> **Note**:
+> If the CDN where the images are hosted doesn't have CORS enabled, it's possible that web browsers will block access to those images from the Firebase-hosted website. This can cause issues with page loading, such as images not displaying correctly or generating loading errors.
