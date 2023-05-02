@@ -34,7 +34,7 @@ flutter pub run build_runner build --delete-conflicting-outputs
 ## Deployment to firebase
 
 The web page is hosted at the following address:
-[Pagina web firebase](catbreeds-eec09.web.app/).
+[Page web firebase](https://catbreeds-eec09.web.app/).
  
 
 > **Note**:
